@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インストール・初期設定 - Kashiwazaki SEO Link Doctor マニュアル</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">Link Doctor</h2>
+            <span class="version">v1.0.0</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html">概要</a></li>
+            <li><a href="setup.html">インストール・初期設定</a></li>
+            <li><a href="link-check.html">リンクチェック</a></li>
+            <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h1>インストール・初期設定</h1>
+
+        <p class="lead">プラグインのインストールから初期設定まで、ステップバイステップで解説します。</p>
+
+        <h2>インストール手順</h2>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>プラグインファイルを <code>/wp-content/plugins/kashiwazaki-seo-link-doctor/</code> にアップロード</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>WordPress管理画面「プラグイン」から有効化</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-body">
+                <p>左メニューに「Kashiwazaki SEO Link Doctor」が追加される</p>
+            </div>
+        </div>
+
+        <figure class="screenshot">
+            <img src="images/screenshots/00-menu-location.png" alt="管理画面メニューの位置" class="lightbox-trigger">
+            <figcaption>管理画面の左メニューにプラグインが追加されます</figcaption>
+        </figure>
+
+        <div class="callout callout-tip">
+            <p>有効化後、設定ページはなくすぐにリンクチェック機能を使用できます。管理画面のみで動作し、フロントエンドには一切出力しません。</p>
+        </div>
+
+        <h2>管理画面の構成</h2>
+
+        <p>管理画面はリンクチェック機能を中心に構成されています。</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:35%;">メニュー</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>リンクチェック</td>
+                    <td>サイト全ページのアウトバウンドリンクをスキャン・検証</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>外部通信について</h2>
+
+        <p>本プラグインはリンクのHTTPステータスを確認するため、外部サイトへのHTTPリクエストを送信します。</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:35%;">通信方法</th>
+                    <th>用途</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>wp_remote_get</td>
+                    <td>リンク先のHTTPステータスコード取得</td>
+                </tr>
+                <tr>
+                    <td>cURL</td>
+                    <td>wp_remote_getでは取得できないケースのフォールバック</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-warning">
+            <p>サーバーのファイアウォール設定で外部HTTPリクエストが制限されている場合、リンクチェックが正しく動作しないことがあります。サーバー管理者に確認してください。</p>
+        </div>
+
+        <nav class="page-nav">
+            <a href="index.html" class="prev">&laquo; 概要</a>
+            <a href="link-check.html" class="next">リンクチェック &raquo;</a>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO Link Doctor v1.0.0</p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+
+    <script src="js/manual.js?v=1"></script>
+</body>
+</html>

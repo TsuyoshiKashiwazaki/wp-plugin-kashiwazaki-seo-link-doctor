@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リンクチェック - Kashiwazaki SEO Link Doctor マニュアル</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">Link Doctor</h2>
+            <span class="version">v1.0.0</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html">概要</a></li>
+            <li><a href="setup.html">インストール・初期設定</a></li>
+            <li><a href="link-check.html">リンクチェック</a></li>
+            <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h1>リンクチェック</h1>
+
+        <p class="lead">サイト全ページのアウトバウンドリンクをスキャンし、HTTPステータスをリアルタイムで検証します。結果はCSVでエクスポートできます。</p>
+
+        <h2>リンクチェックの実行</h2>
+
+        <figure class="screenshot">
+            <img src="images/screenshots/02-linkdoctor-detail.png" alt="リンクチェック画面" class="lightbox-trigger">
+            <figcaption>リンク健全性チェックの実行画面</figcaption>
+        </figure>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>管理画面左メニュー「Kashiwazaki SEO Link Doctor」をクリック</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>ページ一覧からチェック対象のページを選択、または全ページを対象にスキャンを開始</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-body">
+                <p>リンクチェックがリアルタイムで実行され、各リンクのHTTPステータスコードが表示される</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <div class="step-body">
+                <p>チェック完了後、ページごとのリンク健全性がビジュアルに表示される</p>
+            </div>
+        </div>
+
+        <div class="callout callout-tip">
+            <p>リンクチェックはcURLを使用してHTTPステータスを取得します。サーバーの処理能力に応じて、大量のリンクがある場合は時間がかかることがあります。</p>
+        </div>
+
+        <h2>HTTPステータスコード</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:35%;">ステータスコード</th>
+                    <th>意味</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>200</td>
+                    <td>正常 - リンク先が正しく応答</td>
+                </tr>
+                <tr>
+                    <td>301</td>
+                    <td>恒久的リダイレクト - リンク先URLの更新を推奨</td>
+                </tr>
+                <tr>
+                    <td>302</td>
+                    <td>一時的リダイレクト - 通常は問題なし</td>
+                </tr>
+                <tr>
+                    <td>403</td>
+                    <td>アクセス禁止 - リンク先がアクセスを拒否</td>
+                </tr>
+                <tr>
+                    <td>404</td>
+                    <td>ページ未検出 - リンク切れの可能性が高い</td>
+                </tr>
+                <tr>
+                    <td>500</td>
+                    <td>サーバーエラー - リンク先サーバーの問題</td>
+                </tr>
+                <tr>
+                    <td>タイムアウト</td>
+                    <td>応答なし - リンク先サーバーが応答しない</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>リンク健全性の可視化</h2>
+
+        <p>ページごとにリンクの健全性をビジュアル表示します。正常なリンク・リダイレクト・エラーの割合を一目で把握できます。</p>
+
+        <h2>CSVエクスポート</h2>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>リンクチェックを実行して結果を表示する</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>「CSVエクスポート」ボタンをクリック</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-body">
+                <p>リンクURL、ステータスコード、ソースページ等の情報がCSVファイルとしてダウンロードされる</p>
+            </div>
+        </div>
+
+        <div class="callout callout-note">
+            <p>CSVファイルにはリンクURL、HTTPステータスコード、リンク元ページのタイトルとURL、チェック日時が含まれます。外部ツールでの分析や定期的なリンク監査に活用できます。</p>
+        </div>
+
+        <nav class="page-nav">
+            <a href="setup.html" class="prev">&laquo; インストール・初期設定</a>
+            <a href="troubleshooting.html" class="next">トラブルシューティング &raquo;</a>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO Link Doctor v1.0.0</p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+
+    <script src="js/manual.js?v=1"></script>
+</body>
+</html>
